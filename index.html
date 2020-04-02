@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+  <title>Admin Flexbox</title>
+  <meta name="description" content="Dashboard estilo AdminLTE diseñado con CSS Flexbox"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+  <link rel="stylesheet" href="app.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <section class="header__brand">
+        <h1 class="header__title header__title--phone">Admin Flexbox</h1>
+        <h1 class="header__title header__title--watch">AF</h1>
+      </section>
+      <section class="header__bar">
+        <section class="header__buttons"><i class="header__button header__button--left fas fa-arrow-alt-circle-left"></i><i class="header__button header__button--right fas fa-arrow-alt-circle-right"></i></section>
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li class="header__item"><a class="header__link" href="#">Mensajes<span class="header__bullet">2</span></a></li>
+            <li class="header__item"><a class="header__link" href="#">Alertas<span class="header__bullet">5</span></a></li>
+            <li class="header__item"><a class="header__link" href="#">Cerrar sesión</a></li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </header>
+  <section class="body">
+    <aside class="sidebar">
+      <header class="sidebar__header"><img class="sidebar__avatar" src="https://randomuser.me/api/portraits/med/men/78.jpg" alt="Avatar"/>
+        <p class="sidebar__name">Alejandro González Reyes</p>
+        <form class="sidebar__form">
+          <input class="sidebar__input" type="text" name="q" placeholder="Buscar..."/>
+          <button class="sidebar__button" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </header>
+      <nav class="sidebar__nav">
+        <p class="sidebar__title">Menú de Administración</p>
+        <ul class="sidebar__menu">
+          <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-address-book"></i>Clientes</a>
+            <ul class="sidebar__submenu">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-list"></i>Ver todos</a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-plus"></i>Agregar nuevo</a></li>
+            </ul>
+          </li>
+          <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-chart-line"></i>Ventas</a>
+            <ul class="sidebar__submenu">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-list"></i>Ver todos</a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-plus"></i>Agregar nuevo</a></li>
+            </ul>
+          </li>
+          <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-box"></i>Inventario</a>
+            <ul class="sidebar__submenu">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-list"></i>Ver todos</a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-plus"></i>Agregar nuevo</a></li>
+            </ul>
+          </li>
+          <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-file-alt"></i>Facturas</a>
+            <ul class="sidebar__submenu">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-list"></i>Ver todos</a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-plus"></i>Agregar nuevo</a></li>
+            </ul>
+          </li>
+          <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-calendar-alt"></i>Calendario</a>
+            <ul class="sidebar__submenu">
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-list"></i>Ver todos</a></li>
+              <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-plus"></i>Agregar nuevo</a></li>
+            </ul>
+          </li>
+          <li class="sidebar__item"><a class="sidebar__link" href="#"><i class="sidebar__icon fas fa-pencil-alt"></i>Editar Perfíl</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main">
+      <h4 class="main__title">Administración de clientes</h4>
+      <p class="main__subtitle">Formulario de registro de clientes activos en el sistema</p>
+      <form class="form" action="/" method="GET">
+        <div class="form__group">
+          <label class="form__label">Nombre</label>
+          <input class="form__input" type="text" name="nombre" placeholder="Por ejemplo: Miguel Alejandro"/>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Apellidos</label>
+          <input class="form__input" type="text" name="apellidos" placeholder="Por ejemplo: González Reyes"/>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Empresa</label>
+          <input class="form__input" type="text" name="empresa" placeholder="Por ejemplo: Hyperion Inc."/>
+        </div>
+        <div class="form__group">
+          <label class="form__label">Dirección</label>
+          <input class="form__input" type="text" name="direccion" placeholder="Por ejemplo: Juan Aldama #300, CDMX."/>
+        </div>
+        <div class="form__group form__group--block">
+          <label class="form__label">Reporte</label>
+          <textarea class="form__textarea" name="reporte" placeholder="Por ejemplo: Diseño y desarrollo de Landing Page con formulario de registro en PHP"></textarea>
+        </div>
+        <div class="form__group form__group--block">
+          <h5 class="form__subtitle">Seleccione los créditos otorgados al cliente</h5>
+          <hr/>
+        </div>
+        <div class="form__group form__group--block">
+          <label class="form__label">
+            <input class="form__check" type="checkbox"/>Cuenta corriente
+          </label>
+        </div>
+        <div class="form__group form__group--block">
+          <label class="form__label">
+            <input class="form__check" type="checkbox"/>Fondos de inversión
+          </label>
+        </div>
+        <div class="form__group form__group--block">
+          <label class="form__label">
+            <input class="form__check" type="checkbox"/>Cuenta de cetes
+          </label>
+        </div>
+        <div class="form__group form__group--flex">
+          <button class="form__button" type="submit">Registrar</button>
+        </div>
+      </form>
+    </main>
+  </section>
+  <script src="app.js"></script>
+</body>

@@ -1,0 +1,33 @@
+form.form(action="/" method="GET")
+    .form__group
+        label.form__label Nombre
+        input.form__input(type="text" name="nombre" placeholder="Por ejemplo: Miguel Alejandro")
+    .form__group
+        label.form__label Apellidos
+        input.form__input(type="text" name="apellidos" placeholder="Por ejemplo: González Reyes")
+    .form__group
+        label.form__label Empresa
+        input.form__input(type="text" name="empresa" placeholder="Por ejemplo: Hyperion Inc.")
+    .form__group
+        label.form__label Dirección
+        input.form__input(type="text" name="direccion" placeholder="Por ejemplo: Juan Aldama #300, CDMX.")
+    .form__group.form__group--block
+        label.form__label Reporte
+        textarea.form__textarea(name="reporte" placeholder="Por ejemplo: Diseño y desarrollo de Landing Page con formulario de registro en PHP")
+    .form__group.form__group--block
+        h5.form__subtitle Seleccione los créditos otorgados al cliente
+        hr
+    .form__group.form__group--block
+        label.form__label
+            input.form__check(type="checkbox")
+            | Cuenta corriente
+    .form__group.form__group--block
+        label.form__label
+            input.form__check(type="checkbox")
+            | Fondos de inversión
+    .form__group.form__group--block
+        label.form__label
+            input.form__check(type="checkbox")
+            | Cuenta de cetes
+    .form__group.form__group--flex
+        button.form__button(type="submit") Registrar

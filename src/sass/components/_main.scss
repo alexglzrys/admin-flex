@@ -1,0 +1,85 @@
+.main {
+    flex-grow: 1;
+    padding: 2rem 1rem;
+    @include tablet {
+        padding: 2rem;
+    }
+    &__title {
+        font-size: 1rem;
+        line-height: 1;
+        margin-bottom: .5rem;
+        @include tablet {
+            font-size: 1.3rem;
+        }
+    }
+    &__subtitle {
+        font-size: .7rem;
+        @include tablet {
+            font-size: .9rem;
+        }
+    }
+    .form {
+        margin: 1.5rem 0 0;
+        @include tablet {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+    .form__group {
+        margin-bottom: 1rem;
+        @include tablet {
+            width: calc(50% - .5rem);
+        }
+        &--block {
+            width: 100%;
+        }
+        &--flex {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 0;
+        }
+    }
+    .form__label {
+        font-size: .8rem;
+        display: block;
+        @include tablet {
+            font-size: .9rem;
+        }
+    }
+    .form__input, .form__textarea {
+        width: 100%;
+        border-radius: 3px;
+        display: block;
+        padding: .5rem;
+        border: 1px solid #eee;
+        margin: .5rem 0;
+    }
+    .form__textarea {
+        height: 150px;
+        @include tablet {
+            height: 200px;
+        }
+    }
+    .form__button {
+        padding: .8rem 1rem;
+        background-color: steelblue;
+        color: #fff;
+        border-radius: 3px;
+        margin-top: .5rem;
+        display: inline-block;
+    }
+    .form__check {
+        margin-right: .5rem;
+    }
+    .form__subtitle {
+        font-weight: 500;
+        font-size: .8rem;
+        border-left: 10px solid steelblue;
+        padding-left: .5rem;
+        @include tablet {
+            font-size: .9rem;
+        }
+    }
+}

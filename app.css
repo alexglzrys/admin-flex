@@ -1,0 +1,370 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+}
+
+html, body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  color: #fff;
+}
+.header__container {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 768px) {
+  .header__container {
+    flex-direction: row;
+  }
+}
+.header__brand {
+  background-color: steelblue;
+  padding: 1rem;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .header__brand {
+    flex: 0 0 300px;
+  }
+}
+.header__title {
+  line-height: 1;
+}
+.header__title--phone {
+  display: none;
+}
+@media screen and (min-width: 480px) {
+  .header__title--phone {
+    display: block;
+  }
+}
+.header__title--watch {
+  display: block;
+}
+@media screen and (min-width: 480px) {
+  .header__title--watch {
+    display: none;
+  }
+}
+.header__bar {
+  padding: 0.5rem 1rem;
+  background-color: #38678f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .header__bar {
+    flex-grow: 1;
+    padding: 1rem;
+  }
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+.header__item {
+  margin-right: 0.8rem;
+}
+.header__item:last-child {
+  margin-right: 0;
+}
+@media screen and (min-width: 480px) {
+  .header__item {
+    margin-right: 2rem;
+  }
+  .header__item:nth-of-type(1) .header__link::before {
+    content: "";
+  }
+  .header__item:nth-of-type(2) .header__link::before {
+    content: "";
+  }
+}
+.header__bullet {
+  background-color: tomato;
+  margin-left: 0.5rem;
+  border-radius: 2px;
+  text-align: center;
+  display: inline-block;
+  padding: 0.2rem 0.3rem;
+  line-height: 1;
+}
+@media screen and (min-width: 480px) {
+  .header__bullet {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__bullet {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+.header__link {
+  color: #fff;
+  font-size: 0.8rem;
+  display: block;
+  height: 100%;
+  transition: all 0.4s;
+}
+.header__link:hover {
+  color: #eee;
+}
+@media screen and (min-width: 480px) {
+  .header__link {
+    font-size: 0.9rem;
+  }
+  .header__link::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+}
+.header__button {
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+.header__button:hover {
+  color: #eee;
+}
+.header__button--left {
+  margin-right: 0.5rem;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .header__button--left {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__button--right {
+    display: none;
+  }
+}
+
+.body {
+  flex-grow: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar {
+  flex: 0 0 100%;
+  background-color: #eee;
+  padding: 2rem 1rem;
+  transition: all 0.4s;
+  margin-left: -100%;
+}
+@media screen and (min-width: 768px) {
+  .sidebar {
+    padding: 2rem;
+    flex-basis: 300px;
+    margin-left: 0;
+  }
+}
+.sidebar__header {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .sidebar__header {
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.sidebar__avatar {
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  line-height: 1;
+}
+@media screen and (min-width: 768px) {
+  .sidebar__avatar {
+    margin-bottom: 0.5rem;
+  }
+}
+.sidebar__name {
+  font-size: 0.8rem;
+  align-self: center;
+}
+.sidebar__form {
+  width: 100%;
+  position: relative;
+  margin-top: 1rem;
+}
+.sidebar__input {
+  display: block;
+  width: calc(100% - 2rem);
+  padding: 0.6rem;
+  border-radius: 3px;
+}
+.sidebar__button {
+  cursor: pointer;
+  background-color: #ddd;
+  padding: 0.6rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+.sidebar__title {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+.sidebar__link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  font-size: 0.9rem;
+}
+.sidebar__icon {
+  line-height: 1;
+  width: 20px;
+  text-align: center;
+  margin-right: 0.6rem;
+}
+.sidebar__submenu {
+  display: none;
+  padding-left: 2rem;
+  background-color: #aaa;
+}
+.sidebar__submenu .sidebar__link {
+  color: #fff;
+}
+.sidebar__menu > .sidebar__item {
+  transition: all 0.3s;
+}
+.sidebar__menu > .sidebar__item:hover {
+  background-color: steelblue;
+}
+.sidebar__menu > .sidebar__item:hover .sidebar__submenu {
+  display: block;
+}
+.sidebar__menu > .sidebar__item:hover .sidebar__submenu .sidebar__link:hover {
+  color: #111;
+}
+.sidebar__menu > .sidebar__item:hover > .sidebar__link {
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 2rem 1rem;
+}
+@media screen and (min-width: 768px) {
+  .main {
+    padding: 2rem;
+  }
+}
+.main__title {
+  font-size: 1rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .main__title {
+    font-size: 1.3rem;
+  }
+}
+.main__subtitle {
+  font-size: 0.7rem;
+}
+@media screen and (min-width: 768px) {
+  .main__subtitle {
+    font-size: 0.9rem;
+  }
+}
+.main .form {
+  margin: 1.5rem 0 0;
+}
+@media screen and (min-width: 768px) {
+  .main .form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.main .form__group {
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .main .form__group {
+    width: calc(50% - .5rem);
+  }
+}
+.main .form__group--block {
+  width: 100%;
+}
+.main .form__group--flex {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0;
+}
+.main .form__label {
+  font-size: 0.8rem;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .main .form__label {
+    font-size: 0.9rem;
+  }
+}
+.main .form__input, .main .form__textarea {
+  width: 100%;
+  border-radius: 3px;
+  display: block;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  margin: 0.5rem 0;
+}
+.main .form__textarea {
+  height: 150px;
+}
+@media screen and (min-width: 768px) {
+  .main .form__textarea {
+    height: 200px;
+  }
+}
+.main .form__button {
+  padding: 0.8rem 1rem;
+  background-color: steelblue;
+  color: #fff;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+.main .form__check {
+  margin-right: 0.5rem;
+}
+.main .form__subtitle {
+  font-weight: 500;
+  font-size: 0.8rem;
+  border-left: 10px solid steelblue;
+  padding-left: 0.5rem;
+}
+@media screen and (min-width: 768px) {
+  .main .form__subtitle {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,113 @@
+.sidebar {
+    flex: 0 0 100%;
+    background-color: #eee;
+    padding: 2rem 1rem;
+    transition: all .4s;
+
+    // La idea de la persiana consiste en usar un margen negativo
+    // para que no se vea (mobile esta al 100%)
+    //
+    // Con flex-basis: 0 || width: 0;
+    // no funciona ya que el sidebar tiene contenido que lo hace crecer
+    //
+    // Con position absolute es demasiado trabajo
+    margin-left: -100%;
+
+    @include tablet {
+        padding: 2rem;
+        flex-basis: 300px;
+
+        // En dispositivos tablet y superiores la persina usa solo
+        // 300px de ancho, por tanto la escondo -300px
+        // margin-left: -300px;
+        //
+        // Por usabilidad, la persiana en dispositivos de alta
+        // resolución la dejo abierta
+        margin-left: 0;
+    }
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 2rem;
+        @include tablet {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__avatar {
+        border-radius: 50%;
+        margin-right: .5rem;
+        line-height: 1;
+        @include tablet {
+            margin-bottom: .5rem;
+        }
+    }
+    &__name {
+        font-size: .8rem;
+        align-self: center;
+    }
+    &__form {
+        width: 100%;
+        position: relative;
+        margin-top: 1rem;
+    }
+    &__input {
+        display: block;
+        width: calc(100% - 2rem);
+        padding: .6rem;
+        border-radius: 3px;
+    }
+    &__button {
+        cursor: pointer;
+        background-color: #ddd;
+        padding: .6rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+    &__title {
+        font-weight: 500;
+        margin-bottom: 1rem;
+        // margin-left: 1rem;
+    }
+
+    &__link {
+        display: block;
+        padding: .5rem 1rem;
+        color: #333;
+        font-size: .9rem;
+    }
+    &__icon {
+        line-height: 1;
+        width: 20px;
+        text-align: center;
+        margin-right: .6rem;
+    }
+    &__submenu {
+        display: none;
+        padding-left: 2rem;
+        background-color: #aaa;
+        .sidebar__link {
+            color: #fff;
+        }
+    }
+    &__menu > &__item {
+        transition: all .3s;
+        &:hover {
+            background-color: steelblue;
+            .sidebar__submenu {
+                display: block;
+                .sidebar__link:hover {
+                    color: #111;
+                }
+            }
+            > .sidebar__link {
+                color: #fff;
+                transition: all .3s;
+            }
+        }
+    }
+}

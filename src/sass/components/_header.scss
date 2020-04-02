@@ -1,0 +1,126 @@
+.header {
+    color: #fff;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+    &__brand {
+        background-color: steelblue;
+        padding: 1rem;
+        text-align: center;
+        @include tablet {
+            flex: 0 0 300px;
+        }
+    }
+    &__title {
+        line-height: 1;
+        &--phone {
+            display: none;
+            @include phone {
+                display: block;
+            }
+        }
+        &--watch {
+            display: block;
+            @include phone {
+                display: none;
+            }
+        }
+    }
+    &__bar {
+        padding: .5rem 1rem;
+        background-color: darken(steelblue, 10);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include tablet {
+            flex-grow: 1;
+            padding: 1rem;
+        }
+
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+    }
+    &__item {
+        margin-right: .8rem;
+        &:last-child {
+            margin-right: 0;
+        }
+        @include phone {
+            margin-right: 2rem;
+            &:nth-of-type(1) {
+                .header__link::before {
+                    content: '\f27a';
+                }
+            }
+            &:nth-of-type(2) {
+                .header__link::before {
+                    content: '\f0f3';
+                }
+            }
+        }
+    }
+    &__bullet {
+        background-color: tomato;
+        margin-left: .5rem;
+        border-radius: 2px;
+        text-align: center;
+        display: inline-block;
+        padding: .2rem .3rem;
+        line-height: 1;
+        @include phone {
+            font-size: .8rem;
+        }
+        @include tablet {
+            font-size: .9rem;
+            padding: .2rem .5rem;
+        }
+    }
+    &__link {
+        color: #fff;
+        font-size: .8rem;
+        display: block;
+        height: 100%;
+        transition: all .4s;
+        &:hover {
+            color: #eee;
+        }
+        @include phone {
+            font-size: .9rem;
+            &::before {
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                margin-right: .5rem;
+                font-size: .9rem;
+                line-height: 1;
+            }
+        }
+    }
+    &__button {
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        transition: color .4s;
+        &:hover {
+            color: #eee;
+        }
+        &--left {
+            margin-right: .5rem;
+            display: none;
+            @include tablet {
+                display: inline-block;
+            }
+        }
+        &--right {
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+}
+
